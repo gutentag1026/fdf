@@ -1,0 +1,5 @@
+1.To run the program, go to fdf folder, do
+./fdf maps/42.fdf
+
+2.to run man pf minilibx, go to root folder
+man ./minilibx/man/man1/mlx.1
