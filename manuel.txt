@@ -27,4 +27,5 @@ and compile it with gcc -Wall -Wextra -Werror libmlx.a -framework OpenGL -framew
 if you put them in separate folder, do 
 gcc -Wall -Wextra -Werror -I minilibx -L minilibx -lmlx -framework OpenGL -framework AppKit main.c
 -I for header file location, -L for library location, not the file itself -l for lib
-
+4 to compile
+cc main.c -L minilibx_macos/ -lmlx -framework OpenGL -framework Appkit
