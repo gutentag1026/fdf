@@ -30,6 +30,7 @@ gcc -Wall -Wextra -Werror -I minilibx -L minilibx -lmlx -framework OpenGL -frame
 
 4. to compile with lib offered by 42
 cc main.c -L minilibx_macos/ -lmlx -framework OpenGL -framework Appkit
+gcc -Wall -Wextra -Werror -I ./includes -I ./libs/minilibx -I ./libs/libft -L ./libs/minilibx -lmlx -L ./libs/libft -lft -framework OpenGL -framework AppKit ./src/*
 
 5. reference book computer graphics, how to draw line,etc.
 http://library.aceondo.net/ebooks/Computer_Science/computer_graphics_textbook.pdf
