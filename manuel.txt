@@ -37,3 +37,5 @@ http://library.aceondo.net/ebooks/Computer_Science/computer_graphics_textbook.pd
 
 6.how to compile my read.c file
 gcc read.c ./get_next_line/get_next_line.c -L ./libft/ -lft -L ./minilibx_macos/ -lmlx -I ./libft -I ./minilibx_macos -I ./get_next_line/get_next_line.h
+
+gcc read.c ./get_next_line/get_next_line.c -L ./libft/ -lft -L ./minilibx_macos/ -lmlx -I ./libft -I ./minilibx_macos -I ./get_next_line/get_next_line.h -I ./fdf.h -I ./minilibx_macos/ -framework OpenGL -framework AppKit
