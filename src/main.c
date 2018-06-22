@@ -6,7 +6,7 @@
 /*   By: yhuang <yhuang@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 00:45:05 by yhuang            #+#    #+#             */
-/*   Updated: 2018/06/21 19:27:57 by yhuang           ###   ########.fr       */
+/*   Updated: 2018/06/22 00:12:35 by yhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		main(int argc, char **argv)
 	s.map_in = create_map_in(pre, 0);
 	s.map_out = create_map_out(pre);
 	rotate(s.map_in, s.map_out, pre);
-  	max_coords(s.map_out, pre);	
+	max_coords(s.map_out, pre);
 	s.pre = pre;
 	s.mlx = mlx_init();
 	s.window = mlx_new_window(s.mlx, WIN_WIDTH, WIN_HEIGHT, "Super FDF");

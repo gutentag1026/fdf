@@ -6,7 +6,7 @@
 /*   By: yhuang <yhuang@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/03 01:27:21 by yhuang            #+#    #+#             */
-/*   Updated: 2018/06/21 18:59:35 by yhuang           ###   ########.fr       */
+/*   Updated: 2018/06/22 00:21:32 by yhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,16 @@ void		line(t_hook_params s, t_line l)
 
 void		draw_everything(t_hook_params s)
 {
-	mlx_string_put(s.mlx, s.window, 30, 890, 0xff9933, "esc: exit");
-	mlx_string_put(s.mlx, s.window, 30, 910, 0xff9933, "RIGHT ARROW: rotate right");
-	mlx_string_put(s.mlx, s.window, 30, 930, 0xff9933, "LEFT ARROW: rotate left");
-	mlx_string_put(s.mlx, s.window, 30, 950, 0xff9933, "UP ARROW: ALTITUDE INCREASE");
-	mlx_string_put(s.mlx, s.window, 30, 970, 0xff9933, "DOWN ARROW: ALTITUDE DECREASE");
+	mlx_string_put(s.mlx, s.window, 30, 890, \
+			0xff9933, "esc: exit");
+	mlx_string_put(s.mlx, s.window, 30, 910,\
+			0xff9933, "RIGHT ARROW: rotate right");
+	mlx_string_put(s.mlx, s.window, 30, 930, \
+			0xff9933, "LEFT ARROW: rotate left");
+	mlx_string_put(s.mlx, s.window, 30, 950, \
+			0xff9933, "UP ARROW: ALTITUDE INCREASE");
+	mlx_string_put(s.mlx, s.window, 30, 970, \
+			0xff9933, "DOWN ARROW: ALTITUDE DECREASE");
 	dot_to_dot(s);
 }
 

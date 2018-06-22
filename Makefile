@@ -6,7 +6,7 @@
 #    By: yhuang <yhuang@student.42.us.org>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/18 17:22:11 by yhuang            #+#    #+#              #
-#    Updated: 2018/06/21 19:01:13 by yhuang           ###   ########.fr        #
+#    Updated: 2018/06/21 22:50:41 by yhuang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ INC_DIR = ./includes/
 LIBFT_DIR = ./libft/
 MINLBX_DIR = ./minilibx/
 
-SRC_FILES = rortate.c check_error.c draw_line.c key_hook.c parse.c create_map.c function.c main.c	pre_draw.c
+SRC_FILES = rotate.c check_error.c draw_line.c key_hook.c parse.c create_map.c function.c main.c	pre_draw.c
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))

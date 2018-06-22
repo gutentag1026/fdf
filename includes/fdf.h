@@ -6,7 +6,7 @@
 /*   By: yhuang <yhuang@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 00:35:47 by yhuang            #+#    #+#             */
-/*   Updated: 2018/06/21 19:28:01 by yhuang           ###   ########.fr       */
+/*   Updated: 2018/06/22 01:06:54 by yhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 # define PI 3.14159265
 # define DEGREE (PI / 180)
 # define T 45 * DEGREE
-# define S_X WIN_WIDTH * 0
-# define S_Y WIN_HEIGHT * 0
+# define S_X WIN_WIDTH * 0.2
+# define S_Y WIN_HEIGHT * 0.2
 
 typedef struct			s_map
 {
@@ -50,6 +50,10 @@ typedef struct			s_map_preprocess
 	int					h;
 	float				scale_rotate;
 	float				scale;
+	int					diviser;
+	int					dividend;
+	int					x;
+	int					y;
 }						t_map_preprocess;
 
 typedef struct			s_hook_params
@@ -97,8 +101,8 @@ void					check_error(int argc, int fd);
 int						buf_atoi(char *s, int *i);
 t_map					**create_map_in(t_map_preprocess pre, int i);
 t_map					**create_map_out(t_map_preprocess pre);
-void    				normalize_coords(t_map **map, t_map_preprocess pre);
-void    				rotate(t_map **in, t_map **out, t_map_preprocess pre);
+void					normalize_coords(t_map **map, t_map_preprocess pre);
+void					rotate(t_map **in, t_map **out, t_map_preprocess pre);
 void					max_coords(t_map **map, t_map_preprocess pre);
 int						draw(t_hook_params s);
 int						ft_atoi_hex(const char *str, int *i);
