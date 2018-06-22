@@ -5,33 +5,63 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yhuang <yhuang@student.42.us.org>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/06/09 01:14:30 by yhuang            #+#    #+#              #
-#    Updated: 2018/06/11 18:34:50 by yhuang           ###   ########.fr        #
+#    Created: 2018/06/18 17:22:11 by yhuang            #+#    #+#              #
+#    Updated: 2018/06/21 19:01:13 by yhuang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fdf
 
-SRC = main check_error parse draw_line create_map 
+FLAGS = -Wall -Wextra -Werror -g
 
-SRCDIR = src/
+SRC_DIR = ./src/
+OBJ_DIR = ./obj/
+INC_DIR = ./includes/
+LIBFT_DIR = ./libft/
+MINLBX_DIR = ./minilibx/
 
-LIBS = -L libft -lft -L minilibx_macos -lmlx
+SRC_FILES = rortate.c check_error.c draw_line.c key_hook.c parse.c create_map.c function.c main.c	pre_draw.c
+OBJ_FILES = $(SRC_FILES:.c=.o)
 
-FRAMEWORKS = -framework OpenGL -framework AppKit
+SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
+LIBFT = $(addprefix $(LIBFT_DIR), libft.a)
+MINLBX	= $(addprefix $(MINLBX_DIR), libmlx.a)
 
-FLAGS = -Wall -Werror -Wextra
+LNK  = -L $(LIBFT_DIR) -lft -L $(MINLBX_DIR) \
+			-lmlx -framework OpenGL -framework AppKit
 
-CC = gcc
+all: obj $(LIBFT) $(MINLBX) $(NAME)
 
-HEADERS = -I libft -I get_next_line -I minilibx_macos
+obj:
+	@mkdir -p $(OBJ_DIR)
+$(OBJ_DIR)%.o:$(SRC_DIR)%.c
+	@gcc $(FLAGS) -I $(MINLBX_DIR) -I $(LIBFT_DIR) -I $(INC_DIR) -o $@ -c $<
+$(LIBFT):
+	@make -C $(LIBFT_DIR)
+$(MINLBX):
+	@make -C $(MINLBX_DIR)
 
-all: $(NAME)
-	
-$(NAME): 
-	$(CC) $(FLAGS) $(LIBS) $(FRAMEWORKS) $(addprefix $(SRCDIR), $(addsuffix .c, $(SRC))) get_next_line/get_next_line.c -o $(NAME)
+# Compiling
+$(NAME): $(OBJ)
+	@echo "Compiling"
+	@gcc $(OBJ) $(LNK) -lm -o $(NAME)
+	@echo "$(NAME) generated!".
 
 clean:
-	/bin/rm -f $(NAME)
+	@rm -Rf $(OBJ_DIR)
+	@make -C $(LIBFT_DIR) clean
+	@make -C $(MINLBX_DIR) clean
+	@echo "Objects removed!"
 
-re: clean all
+# fclean rule
+fclean: clean
+	@rm -f $(NAME)
+	@make -C $(LIBFT_DIR) fclean
+	@echo "$(NAME) removed!"
+
+# re rule
+re: fclean all
+
+# phony
+.PHONY: all clean fclean re
