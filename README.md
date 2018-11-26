@@ -9,7 +9,7 @@
 1.To run the program, go to fdf folder, do
 ./fdf maps/42.fdf
 
-2.to run man pf minilibx, go to root folder
+2.to run man minilibx, go to root folder
 man ./minilibx/man/man1/mlx.1
 
 3.to use the minilibx, you need updated version, don't use the library on subject page
@@ -17,6 +17,7 @@ man ./minilibx/man/man1/mlx.1
 https://github.com/qst0/ft_libgfx 
 go to minilibx_macos_sierra folder and create a main.c
 
+```
 #include <mlx.h>
 
 int main(void)
@@ -30,6 +31,7 @@ int main(void)
   mlx_loop(mlx);//takes whatever inputs from the mouse and keyboards and exposes as events and call a function associated with this event
   return (0);
 }
+```
 make the library to get libmlx.a,
 and compile it with gcc -Wall -Wextra -Werror libmlx.a -framework OpenGL -framework Appkit main.c
 if you put them in separate folder, do 
