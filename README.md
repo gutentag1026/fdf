@@ -44,6 +44,9 @@ gcc -Wall -Wextra -Werror -I ./includes -I ./libs/minilibx -I ./libs/libft -L ./
 
 5. reference book computer graphics, how to draw line,etc.
 http://library.aceondo.net/ebooks/Computer_Science/computer_graphics_textbook.pdf
+how to rotate coordinates of a point
+![image](https://user-images.githubusercontent.com/16285490/116188459-0522e400-a75a-11eb-8e29-1167fb630006.png)
+
 
 6.how to compile my read.c file
 gcc read.c ./get_next_line/get_next_line.c -L ./libft/ -lft -L ./minilibx_macos/ -lmlx -I ./libft -I ./minilibx_macos -I ./get_next_line/get_next_line.h
